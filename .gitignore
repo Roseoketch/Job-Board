@@ -1,3 +1,9 @@
 virtual/
+<<<<<<< HEAD
+.env
+DS_store
+~.pyc
+=======
 *.pyc
 .env
+>>>>>>> 799e569d6b34604e1e25111323860b40a7fadb35

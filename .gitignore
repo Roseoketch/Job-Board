@@ -1,0 +1,4 @@
+virtual/
+.env
+DS_store
+~.pyc

@@ -46,7 +46,14 @@ class Jobs(models.Model):
         Method to delete a job from the database
         '''
         return self.delete()
-        
+    @classmethod
+    def get_jobs(cls):
+        '''
+        Method to get all the jobs in the database
+        '''
+        jobs = Jobs.objects.all()
+        return jobs
+
 
 
 class Staff(models.Model):

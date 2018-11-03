@@ -40,4 +40,17 @@ class JobsTestClass(TestCase):
         self.new_job.delete_job()
         self.assertNotIn(self.new_job, saved_jobs)
 
+    def test_get_jobs(self):
+        '''
+        Test Case to check if all jobs are gotten from the database
+        '''
+        self.new_job.save_job()
+        saved_jobs = Jobs.objects.all()
+        gotten_jobs = Jobs.get_jobs()
+        self.assertEqual(str(gotten_jobs),str(saved_jobs))
+
+
+    def tearDown(self):
+        self.new_job.delete()
+
     

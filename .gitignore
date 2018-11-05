@@ -1,3 +1,8 @@
 virtual/
 *.pyc
 .env
+DS_store
+.vscode
+__pychache__
+geckodriver.log
+.coverage

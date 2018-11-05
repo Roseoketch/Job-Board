@@ -3,6 +3,6 @@ virtual/
 .env
 DS_store
 .vscode
-__pychache__
+__pycache__
 geckodriver.log
 .coverage

@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.urls import path,include
 from django.contrib import admin
+from django.urls import include, path
+from board.views import board, partner_view, staff_view
+from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
     path('api/', include('board.api.urls')),
+    path('', include('board.urls')),
+    path('token-auth/', obtain_jwt_token),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup',board.SignUpView.as_view(), name="signup"),
+    path('accounts/signup/partner',partner_view.PartnerSignUpView.as_view(), name='partner_signup'),
+    path('accounts/signup/staff',staff_view.StaffSignUpView.as_view(), name='staff_signup'),
 ]

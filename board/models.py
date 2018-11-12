@@ -9,11 +9,11 @@ class User(AbstractUser):
 class Partner_Profile(models.Model):
     # Relationship with the abstract user for roles.
     user = models.OneToOneField(User,on_delete=models.CASCADE, primary_key=True)
-    Partner_name  = models.CharField(max_length =255)
+    partner_name  = models.CharField(max_length =255)
     bio = models.CharField(max_length =255)
     address =  models.CharField(max_length =255)
     email = models.EmailField(null=True)
-    partner_logo = models.ImageField()
+    partner_logo = models.ImageField(null=True)
 
 # class Partners_Profile(models.Model):
 #     '''
@@ -24,14 +24,14 @@ class Partner_Profile(models.Model):
 #     address =  models.CharField(max_length =255)
 #     email = models.EmailField(null=True)
 #     partner_logo = models.ImageField()
-    
+
 #     def __str__(self):
 #         '''
 #         Display for Hiring partner profile in partner profile table
 #         '''
 #         return self.partner_name
 
-class Jobs(models.Model):
+class Job(models.Model):
     '''
     Class to define Jobs posted by Hiring Partners
     '''
@@ -74,5 +74,3 @@ class Jobs(models.Model):
 class Staff_Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     email = models.EmailField(null=False)
-
-# Create your models here.

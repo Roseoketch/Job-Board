@@ -34,6 +34,9 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     'board',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'rest_auth.registration',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,12 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'django_nose',
-    'rest_framework.authtoken',
-    'rest_auth',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'rest_auth.registration',
+
     'allauth.socialaccount',
 ]
 
@@ -66,8 +67,7 @@ MIDDLEWARE = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES':(
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (

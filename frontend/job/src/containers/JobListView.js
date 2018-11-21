@@ -3,13 +3,6 @@ import axios from 'axios';
 
 import Jobs from '../components/jobs';
 
-const listData = [];
-for(let i = 0; i < 23; i++){
-  listData.push({
-
-  });
-}
-
 class JobList extends React.Component {
 
   state = {

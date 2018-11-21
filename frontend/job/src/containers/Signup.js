@@ -49,6 +49,18 @@ class RegistrationForm extends React.Component {
     callback();
   }
 
+  validateFirstPassword = (rule, value, callback) => {
+    const form = this.props.form;
+    const re = new RegExp("^(?=.*\d)(?=.*[a-z]).{8,32}$");
+    const isOk = re.test(value);
+    console.log(isOk);
+    if(!isOk) {
+      callback('Password should have more than 8 characters, that are letters combined with numbers!');
+    } else {
+      callback();
+    }
+  }
+
   render() {
     const { getFieldDecorator } = this.props.form;
 
@@ -80,6 +92,7 @@ class RegistrationForm extends React.Component {
               required: true, message: 'Please input your password!',
             }, {
               validator: this.validateToNextPassword,
+              validator: this.validateFirstPassword,
             }],
           })(
             <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Password" />

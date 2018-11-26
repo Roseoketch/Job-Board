@@ -50,8 +50,7 @@ class RegistrationForm extends React.Component {
   }
 
   validateFirstPassword = (rule, value, callback) => {
-    const form = this.props.form;
-    const re = new RegExp("^(?=.*\d)(?=.*[a-z]).{8,32}$");
+    const re = new RegExp("^(?=.*)(?=.*[a-z]).{8,32}$");
     const isOk = re.test(value);
     console.log(isOk);
     if(!isOk) {

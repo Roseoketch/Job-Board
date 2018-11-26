@@ -4,4 +4,4 @@ from board.models import Job
 class JobsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Job
-        fields = ('title', 'descriptions', 'requirements', 'date_posted', 'approved')
+        fields = ('id', 'title', 'descriptions', 'requirements', 'date_posted', 'approved')
